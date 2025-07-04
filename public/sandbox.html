@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Butterchurn Sandbox</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: transparent;
+      position: relative;
+    }
+
+    #visualizer-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none; /* Hide both by default, show active one via JS */
+      pointer-events: auto;
+    }
+
+    #butterchurn-canvas {
+      z-index: 1;
+    }
+
+    #bars-canvas {
+      z-index: 2;
+    }
+
+    #player-logo-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      cursor: pointer;
+      pointer-events: auto;
+      width: 120px;
+      height: 120px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    #player-logo-overlay:hover {
+      opacity: 1;
+    }
+
+    #player-logo-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="visualizer-container">
+    <canvas id="butterchurn-canvas"></canvas>
+    <canvas id="bars-canvas"></canvas>
+  </div>
+
+  <img id="player-logo-overlay" src="logo.png" alt="Visualizer Logo" />
+
+  <script src="sandbox.js" defer></script>
+</body>
+</html>

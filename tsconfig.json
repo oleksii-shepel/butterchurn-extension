@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2022", // Or "esnext" for the latest features
+    "module": "esnext", // Keep module system simple for browser
+    "outDir": "./dist", // Output compiled JS files to a 'dist' folder
+    "strict": true,     // Enable all strict type-checking options
+    "esModuleInterop": true, // Allow default imports from modules with no default export
+    "skipLibCheck": true,    // Skip type checking of all declaration files (*.d.ts)
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true, // Allow JS files to be part of the project (if you mix JS/TS)
+    "lib": ["dom", "dom.iterable", "esnext"] // Include DOM types for browser APIs
+  },
+  "include": [
+    "src/content-script.ts",
+    "src/service_worker.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

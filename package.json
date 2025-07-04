@@ -1,0 +1,22 @@
+{
+  "name": "audio-visualizer",
+  "version": "1.0.0",
+  "description": "YouTube Audio Visualizer Extension using Butterchurn",
+  "author": "Oleksii Shepel",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "butterchurn": "^2.6.7",
+    "butterchurn-presets": "^2.4.7"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.326",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
