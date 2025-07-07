@@ -18,7 +18,9 @@
     {
       "matches": [
         "https://www.youtube.com/embed/*",
-        "https://www.youtube-nocookie.com/embed/*"
+        "https://www.youtube-nocookie.com/embed/*",
+        "http://localhost:8100/*",
+        "https://localhost:8100/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle",
