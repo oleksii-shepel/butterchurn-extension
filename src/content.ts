@@ -84,7 +84,7 @@ function initializeSandbox() {
 window.addEventListener('message', (event: MessageEvent) => {
   const data = event.data;
   if (!data || typeof data !== 'object') return;
-  if (event.origin !== window.origin && !event.origin.startsWith('http://localhost:8100')) return;
+  if (event.origin !== window.origin && !event.origin.startsWith('https://echoes-player-1bb88.web.app')) return;
 
   if (data.type === 'CONTROL') {
     console.log('[Content Script] Received CONTROL:', data);
@@ -191,10 +191,9 @@ function setupAudio(videoEl: HTMLVideoElement) {
   // 💡 Periodically attempt to resume audio context
   setInterval(() => {
     if (audioCtx?.state === 'suspended') {
-      console.warn('[Content Script] AudioContext suspended – trying to resume');
       audioCtx.resume().catch(console.error);
     }
-  }, 5000);
+  }, 1000);
 }
 
 function waitForVideoElement(callback: (video: HTMLVideoElement, player: HTMLElement) => void) {

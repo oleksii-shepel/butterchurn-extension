@@ -5,22 +5,18 @@
   "description": "Audio visualizer for YouTube videos",
   "permissions": [
     "activeTab",
-    "scripting",
-    "storage"
+    "scripting"
   ],
   "host_permissions": [
     "https://www.youtube.com/embed/*",
     "https://www.youtube-nocookie.com/embed/*",
-    "http://localhost:8100/*",
-    "https://localhost:8100/*"
+    "https://echoes-player-1bb88.web.app/search"
   ],
   "content_scripts": [
     {
       "matches": [
         "https://www.youtube.com/embed/*",
-        "https://www.youtube-nocookie.com/embed/*",
-        "http://localhost:8100/*",
-        "https://localhost:8100/*"
+        "https://www.youtube-nocookie.com/embed/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle",
@@ -36,12 +32,10 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["sandbox.html", "sandbox.js", "logo.png", "space-ambient.mp3"],
+      "resources": ["sandbox.html", "sandbox.js", "logo.png"],
       "matches": [
         "https://www.youtube.com/*",
-        "https://www.youtube-nocookie.com/*",
-        "http://localhost:8100/*",
-        "https://localhost:8100/*"
+        "https://www.youtube-nocookie.com/*"
       ]
     }
   ],
