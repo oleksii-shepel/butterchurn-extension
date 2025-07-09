@@ -392,5 +392,4 @@ window.addEventListener('load', () => {
     // Initially hide both canvases
     if (butterchurnCanvas) butterchurnCanvas.style.display = 'none';
     if (barsCanvas) barsCanvas.style.display = 'none';
-    showLogo(!userHasInteractedWithLogo); // Show logo initially until user interaction
 });
