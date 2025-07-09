@@ -259,12 +259,10 @@ window.addEventListener('message', (event: MessageEvent) => {
     if (!data || typeof data !== 'object') return;
     // Security check: Only process messages from expected origins
     if (event.origin !== window.origin && !event.origin.startsWith('https://echoes-player-1bb88.web.app')) {
-        console.warn('[Content Script] Message from untrusted origin:', event.origin);
         return;
     }
 
     if (data.type === 'CONTROL') {
-        console.log('[Content Script] Received CONTROL:', data);
         const oldMode = currentMode;
         currentMode = data.mode;
 
