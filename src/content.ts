@@ -252,21 +252,6 @@ function setupAudio(videoEl: HTMLVideoElement) {
     // Add event listeners for user interaction to resume AudioContext
     window.addEventListener('click', resumeAudio, { once: true });
     window.addEventListener('keydown', resumeAudio, { once: true });
-
-    document.addEventListener('visibilitychange', () => {
-        if (!audioCtx) return; // Ensure audioCtx exists
-
-        if (document.hidden) {
-            console.log('[Content Script] Document hidden - suspending audio');
-            audioCtx.suspend().catch(console.error);
-        } else {
-            console.log('[Content Script] Document visible - resuming audio');
-            audioCtx.resume().catch(console.error);
-        }
-    });
-
-    // Removed the redundant setInterval to resume audio context.
-    // The `visibilitychange` listener and user gesture listeners should be sufficient.
 }
 
 window.addEventListener('message', (event: MessageEvent) => {
